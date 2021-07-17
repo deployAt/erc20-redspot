@@ -15,7 +15,7 @@ async function run() {
 
   console.log('Balance: ', balance.toHuman())
 
-  const contract = await contractFactory.deploy('new', '1234567', {
+  const contract = await contractFactory.deploy('new', '1000000', {
     gasLimit: '400000000000',
     value: '1000 UNIT',
   })
@@ -26,7 +26,7 @@ async function run() {
   const balanceOfAlice = await contract.query.balanceOf(signer)
   console.log('Balance of Alice: ', balanceOfAlice.output?.toHuman())
 
-  await contract.tx.transfer(receiver, 777)
+  await contract.tx.transfer(receiver, 10000)
 
   const balanceOfBob = await contract.query.balanceOf(receiver)
   console.log('Balance of Bob: ', balanceOfBob.output?.toHuman())
