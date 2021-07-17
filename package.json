@@ -30,6 +30,7 @@
   "module": "true",
   "scripts": {
     "build": "npx redspot compile",
-    "test": "npx redspot test"
+    "test": "npx redspot test",
+    "deploy": "npx redspot run scripts/deploy.ts --no-compile     "
   }
 }
